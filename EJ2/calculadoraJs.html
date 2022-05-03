@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <input type="text" disabled id="visor">
+    <br>
+  
+    <input type="button" value="1" onclick="mostrar(this.value)">
+    <input type="button" value="2" onclick="mostrar(this.value)">
+    <input type="button" value="3" onclick="mostrar(this.value)">
+    <input type="button" value="+" onclick="operacion('suma')">
+    <br>
+    <input type="button" value="4" onclick="mostrar(this.value)">
+    <input type="button" value="5" onclick="mostrar(this.value)">
+    <input type="button" value="6" onclick="mostrar(this.value)">
+    <input type="button" value="-" onclick="operacion('resta')">
+    <br>
+    <input type="button" value="7" onclick="mostrar(this.value)">
+    <input type="button" value="8" onclick="mostrar(this.value)">
+    <input type="button" value="9" onclick="mostrar(this.value)">
+    <input type="button" value="*" onclick="operacion('multi')">
+    <br>
+    <input type="button" value="0" onclick="mostrar(this.value)">
+    <input type="button" value="=" onclick="resultado()">
+    <input type="button" value="C" onclick="borrar()">
+    <input type="button" value="/" onclick="operacion('divi')">
+    
+    <script>
+        vi = document.getElementById("visor")
+        function mostrar(num){
+            vi.value += num;
+        }
+
+        function operacion(operador){
+            num_uno = parseInt(vi.value);
+            signo = operador;
+            vi.value=''
+        }
+        function resultado(){
+            num_dos = parseInt(vi.value);
+            switch(signo){
+                case 'suma':
+                    resul = num_uno + num_dos;
+                break
+                case 'resta':
+                    resul = num_uno - num_dos;
+                break
+                case 'multi':
+                    resul = num_uno * num_dos;
+                break
+                case 'divi':
+                    resul = num_uno / num_dos;
+                break
+                default:
+            }
+            vi.value = resul;
+        }
+        function borrar(){
+            vi.value = '';
+        }
+    </script>
+</body>
+</html>

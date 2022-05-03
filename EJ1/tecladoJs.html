@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <input type="text" disabled id="visor">
+    <br>
+    
+   
+    <script>
+    
+    var linea1 = "QWERTYUIOP";
+    var linea2 = "ASDFGHJKLÑ";
+    var linea3 = "ZXCVBNM";
+    
+    for(i = 0; i < linea1.length; i++){
+        document.write('<input type="button" value="'+linea1[i]+'" onclick="mostrar(this.value)"> ');
+        }
+        document.write("<br>");
+    for(i = 0; i < linea2.length; i++){
+        document.write('<input type="button" value="'+linea2[i]+'" onclick="mostrar(this.value)">');
+        }
+        document.write("<br>");
+    for(i = 0; i < linea3.length; i++){
+        document.write('<input type="button" value="'+linea3[i]+'" onclick="mostrar(this.value)">');
+        }
+        document.write("<br>");
+           
+    function mostrar(letra){
+        document.getElementById("visor").value += letra ;
+        }     
+    function borrar(){
+        document.getElementById("visor").value = document.getElementById("visor").value.slice(0,-1)
+    }
+
+    </script>
+    <input type="button" value="backs" onclick="borrar()">  
+    <input type="button" value="--espacio--" onclick="mostrar(' ')">
+</body>
+</html>
